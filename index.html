@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>particles.js</title>
+  <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+</head>
+<body>
+
+  <div class="love-message">Te amo</div>
+<!-- particles.js container -->
+<div id="particles-js"></div>
+
+
+ <!-- Contenedor para la imagen animada -->
+ <div class="left-images">
+  <img src="https://res.cloudinary.com/tecnologi-zifrikc/image/upload/v1731612481/lumy1_l8smvh.jpg" alt="Image 1"  onclick="playAudio(0)">
+  <img src="https://res.cloudinary.com/tecnologi-zifrikc/image/upload/v1731619144/lumy4_zn275h.jpg" alt="Image 2" onclick="playAudio(1)">
+  <img src="https://res.cloudinary.com/tecnologi-zifrikc/image/upload/v1731619151/mumy3_m2pzrb.jpg" alt="Image 3" onclick="playAudio(2)">
+  <img src="https://res.cloudinary.com/tecnologi-zifrikc/image/upload/v1731619155/lumy2_mkjdcd.jpg" alt="Image 4" onclick="playAudio(3)">
+</div>
+
+<div class="image-container">
+  <img src="https://res.cloudinary.com/tecnologi-zifrikc/image/upload/v1685129477/source_zdvgtc.gif" alt="Animated Image">
+</div>
+
+<!-- Audio que se reproduce automáticamente -->
+<!-- <audio autoplay id="background-audio">
+  <source src='assets/12.mp3' type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> -->
+<!-- scripts -->
+<script>
+  // Array de archivos de audio
+  const audioFiles = [
+      'assets/12.mp3',
+      'assets/gartiosa2.mp3',
+      'assets/gatios3.mp3',
+      'assets/gatiosa4.mp3'
+    ];
+
+    // Variable global para el audio actual
+    let currentAudio = null;
+
+    function playAudio(index) {
+      // Si ya hay un audio reproduciéndose, detenerlo
+      if (currentAudio) {
+        currentAudio.pause(); // Detiene el audio
+        currentAudio.currentTime = 0; // Reincia el tiempo de reproducción
+      }
+
+      // Crear un nuevo objeto de audio para la canción seleccionada
+      currentAudio = new Audio(audioFiles[index]);
+      currentAudio.play(); // Reproduce el nuevo audio
+    }
+</script>
+<script src="../particles.js"></script>
+<script src="js/app.js"></script>
+</script>
+
+</body>
+</html>
